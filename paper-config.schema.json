@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for configuring a research paper.",
+  "type": "object",
+  "properties": {
+    "draft": {
+      "type": "boolean",
+      "default": true,
+      "description": "Indicates if the paper is a draft version."
+    },
+    "anonymous": {
+      "type": "boolean",
+      "default": false,
+      "description": "Indicates if the paper is anonymous."
+    },
+    "camera-ready": {
+      "type": "boolean",
+      "default": false,
+      "description": "Indicates if the paper is a camera-ready version."
+    },
+    "libraries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of libraries used in the paper."
+    },
+    "knowledges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of knowledge files to use in the paper."
+    },
+    "appendix": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of appendices included in the paper."
+    },
+    "bibliography": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Path to the bibliography file."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of bibliography entries."
+        }
+      ]
+    }
+  }
+}

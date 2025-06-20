@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "A JSON schema for metadata of a research paper, including authors, affiliations, and artifacts.",
+  "required": [
+    "title",
+    "author",
+    "abstract"
+  ],
+  "$defs": {
+    "acm-artifacts": {
+      "type": "object",
+      "description": "ACM artifacts metadata as described in <https://www.acm.org/publications/policies/artifact-review-and-badging-current>",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "format": "uri"
+        },
+        "reusable": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "functional": {
+          "type": "boolean"
+        }
+      }
+    },
+    "affiliation": {
+      "type": "object",
+      "required": [
+        "name",
+        "country",
+        "city"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "required": [
+        "name",
+        "email"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "initials": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "affiliation": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "#/defs/affiliation"
+              }
+            },
+            {
+              "type": "#/defs/affiliation"
+            }
+          ]
+        },
+        "orcid": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
+        },
+        "funding": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "short-title": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri"
+    },
+    "citing": {
+      "type": "object",
+      "description": "Relevant metadata for citing the paper",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "format": "uri"
+        },
+        "arxiv": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "author": {
+      "oneOf": [
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/defs/author"
+          }
+        },
+        {
+          "$ref": "#/defs/author"
+        }
+      ]
+    },
+    "abstract": {
+      "type": "string"
+    },
+    "artifacts": { "$ref": "#/defs/artifacts" },
+    "acknowledgements": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "ccdesc": {
+          "type": "array",
+          "description": "ACM Computing Classification System (CCS) concepts",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Free-form keywords associated with the paper",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
