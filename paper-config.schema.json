@@ -6,17 +6,17 @@
     "draft": {
       "type": "boolean",
       "default": true,
-      "description": "Indicates if the paper is a draft version."
+      "description": "Enables todos, draft pictures, etc."
     },
     "anonymous": {
       "type": "boolean",
       "default": false,
-      "description": "Indicates if the paper is anonymous."
+      "description": "Removes author names and affiliations for anonymous submissions."
     },
     "camera-ready": {
       "type": "boolean",
       "default": false,
-      "description": "Indicates if the paper is a camera-ready version."
+      "description": "Disables line numbers, sets pdf-a mode, etc."
     },
     "libraries": {
       "type": "array",

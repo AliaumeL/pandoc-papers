@@ -25,6 +25,12 @@ pandoc \
   --output=paper.<template-main>.tex             \
   <your-document>.md
 ```
+
+## Installation
+
+You can put these templates in the `$HOME/.pandoc/templates/` directory 
+on unix-like systems, or `%APPDATA%\pandoc\templates\` on Windows.
+
 ## Available templates
 
 - [x] [article](https://www.latex-project.org/help/documentation/article/)
