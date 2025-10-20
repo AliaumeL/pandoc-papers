@@ -89,9 +89,8 @@ manage internal links in the documents.
 ## Status
 
 This repository is in an early stage and the templates were created whenever I
-needed to publish a paper in a specific style. The repository lacks some
-features that I use, such as a `Makefile` that automates the build process and
-streamlines publishing to arXiv.
+needed to publish a paper in a specific style. The repository now includes a
+`Makefile` for easy installation and removal of templates and defaults files.
 
 ## Contributing
 
