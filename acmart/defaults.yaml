@@ -1,0 +1,23 @@
+---
+# Pandoc defaults file for acmart paper style
+# This file configures Pandoc to use the acmart template
+
+template: acmart/asmart-small.tex
+
+filters:
+  - filters/git-meta.lua
+
+metadata:
+  # Default metadata values
+  draft: true
+  anonymous: false
+  final: false
+
+# Output settings
+pdf-engine: pdflatex
+
+# Reader settings
+from: markdown+tex_math_dollars+raw_tex
+
+# Writer settings
+to: latex

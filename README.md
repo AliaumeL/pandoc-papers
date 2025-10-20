@@ -14,7 +14,25 @@ can be found in the `examples/` directory.
 
 ## Usage 
 
-The simplest way to use these templates is to run the following command.
+### Using Defaults Files (Recommended)
+
+After installation with `make install`, the simplest way to use these templates 
+is with the defaults files:
+
+```bash
+pandoc \
+  --defaults=pandoc-papers-<style>     \
+  --metadata-file=paper-meta.yaml      \
+  --metadata="some-key:some-value"     \
+  --output=paper.tex                   \
+  <your-document>.md
+```
+
+Where `<style>` is one of: `acmart`, `lipics`, `lncs`, or `plain`.
+
+### Manual Usage
+
+You can also use the templates directly without installation:
 
 ```bash
 pandoc \
@@ -28,7 +46,32 @@ pandoc \
 
 ## Installation
 
-You can put these templates in the `$HOME/.pandoc/templates/` directory 
+### Automated Installation (Recommended)
+
+The easiest way to install the templates is using the provided Makefile:
+
+```bash
+make install
+```
+
+This will install all templates, filters, and defaults files to your Pandoc data directory.
+
+You can then use the templates with:
+```bash
+pandoc --defaults=pandoc-papers-acmart input.md -o output.tex
+pandoc --defaults=pandoc-papers-lipics input.md -o output.tex
+pandoc --defaults=pandoc-papers-lncs input.md -o output.tex
+pandoc --defaults=pandoc-papers-plain input.md -o output.tex
+```
+
+To remove the installation:
+```bash
+make remove
+```
+
+### Manual Installation
+
+Alternatively, you can manually put these templates in the `$HOME/.pandoc/templates/` directory 
 on unix-like systems, or `%APPDATA%\pandoc\templates\` on Windows.
 
 ## Available templates

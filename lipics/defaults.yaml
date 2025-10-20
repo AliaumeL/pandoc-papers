@@ -1,0 +1,25 @@
+---
+# Pandoc defaults file for lipics paper style
+# This file configures Pandoc to use the lipics template
+
+template: lipics/lipics.tex
+
+filters:
+  - filters/git-meta.lua
+
+metadata:
+  # Default metadata values
+  draft: true
+  anonymous: false
+  final: false
+  review: false
+  arxiv: false
+
+# Output settings
+pdf-engine: xelatex
+
+# Reader settings
+from: markdown+tex_math_dollars+raw_tex
+
+# Writer settings
+to: latex
