@@ -29,6 +29,11 @@ $if(draft)$
 \usepackage{lineno}
 $endif$
 
+% Configure unicode support for xelatex
+\ifxetex
+  \usepackage{fontspec}
+\fi
+
 
 % math packages
 \usepackage{amsmath,amsthm,amssymb,stmaryrd,thmtools,upgreek}
