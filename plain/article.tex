@@ -71,6 +71,7 @@ $endif$
 \usepackage{hyperref}
 \usepackage[capitalise,noabbrev,nameinlink]{cleveref}
 \Crefname{assumption}{Assumption}{Assumptions}
+\Crefname{conjecture}{Conjecture}{Conjectures}
 \usepackage[$if(draft)$composition$else$electronic$endif$,hyperref,xcolor,cleveref]{knowledge}
 \knowledgeconfigure{notion}
 
@@ -169,11 +170,19 @@ $endfor$
 
 % For the date, we first check if the user has provided a date,
 % and otherwise use the git meta inforamtion (if available).
+$if(draft)$
 $if(date)$
 \date{$date$$if(git-meta)$ --- $git-meta.commit$$endif$}
 $else$
 $if(git-meta)$
 \date{$git-meta.date$\footnote{$git-meta.commit$ -- branch $git-meta.branch$ at $git-meta.origin$}}
+$endif$
+$endif$
+$else$
+$if(date)$
+\date{$date$}
+$else$
+\date{\today}
 $endif$
 $endif$
 
@@ -203,7 +212,7 @@ $if(keywords)$
 $endif$
 \paragraph{Repository:} \repositoryUrl
 $for(relatedversion)$
-\paragraph{$it.kind$} \hyperlink{$it.url$}{$it.name$} $if(it.cite)$\cite{$it.cite$}$endif$
+\paragraph{$it.kind$} \href{$it.url$}{$it.name$} $if(it.cite)$\cite{$it.cite$}$endif$
 $endfor$
 \end{abstract}
 
