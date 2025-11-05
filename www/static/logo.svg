@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   inkscape:export-filename="logo_64.png"
+   inkscape:export-xdpi="34.133335"
+   inkscape:export-ydpi="34.133335"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="1.7792749"
+     inkscape:cx="122.24081"
+     inkscape:cy="87.676166"
+     inkscape:window-width="1408"
+     inkscape:window-height="643"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Diamond"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Diamond"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,-7.0710768 -7.0710894,0 0,7.0710589 7.0710462,0 Z"
+         id="path19" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="stroke:#c60b46;stroke-width:10;stroke-linecap:square;fill:none"
+       d="M 20.26902,20 H 90 c 0,0 1.976385,26.69166 39.38154,26.415255 C 163.66517,46.161917 159.73098,90 159.73098,90 v 70 H 20.26902 Z"
+       sodipodi:nodetypes="ccscccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:36.6639px;line-height:39.8792px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-orientation:upright;text-anchor:start;fill:#004e7d;stroke:none;stroke-width:10;stroke-linecap:square"
+       x="26.26902"
+       y="79.536308"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="26.26902"
+         y="79.536308"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Zapfino;-inkscape-font-specification:'Zapfino Italic';stroke-width:10;fill:#004e7d">Pa</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:58.62px;line-height:63.7608px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-orientation:upright;text-anchor:start;fill:#c60b46;stroke:none;stroke-width:10;stroke-linecap:square"
+       x="94.990967"
+       y="146.04726"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="94.990967"
+         y="146.04726"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'EB Garamond';-inkscape-font-specification:'EB Garamond';stroke-width:10;fill:#c60b46">Pa</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-dasharray:none;marker-end:url(#Diamond)"
+       d="M 45.260911,92.842655 V 127.89398 H 77.85846"
+       id="path2"
+       sodipodi:nodetypes="ccc" />
+    <path
+       id="path3"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#004e7d;stroke-linecap:square;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1"
+       d="M 137.75 42.25 L 128.58203 51.417969 C 128.859 51.418866 129.13777 51.418086 129.41797 51.416016 C 136.9241 51.360546 141.6499 53.548025 145.21094 56.806641 C 148.77197 60.065256 151.14962 64.669265 152.62695 69.558594 C 155.58162 79.33725 154.75195 89.552734 154.75195 89.552734 L 154.73047 89.775391 L 154.73047 155 L 25.269531 155 L 25.269531 154.73047 L 15.269531 164.73047 L 15.269531 165 L 164.73047 165 L 164.73047 90.21875 C 164.86472 88.533867 165.55061 77.757634 162.19922 66.666016 C 160.37462 60.62749 157.30647 54.319461 151.96289 49.429688 C 148.28191 46.061312 143.51209 43.496287 137.75 42.25 z " />
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+# This is a defaults file for Pandoc, 
+# that configures Pandoc to use the IEEE LaTeX template for IEEE articles.
+template: ${.}/ieee/ieee.tex
+
+filters:
+  - ${.}/../filters/git-meta.lua
+  - ${.}/../filters/affiliations.lua
+
+resource-path:
+  - .             # the working directory from which pandoc is run
+  - ${.}/ieee     # class and images for ieee 
+
+metadata:
+  # Default metadata values
+  draft:     true
+  anonymous: false
+  final:     false
+
+# By default, process paper.md with paper-meta.yaml
+input-file: paper.md
+metadata-file: paper-meta.yaml
+
+# Writer settings
+to: latex

@@ -1,0 +1,56 @@
+title: Sample Paper Title
+short-title: S.P.T.
+repository: "https://github.com/AliaumeL/pandoc-papers"
+abstract: |
+  Let $\mathbb{N}$ be numbers. And $\mathcal{Z}$ be other numbers.
+author:
+  - name: Author 1
+    email: a.1@edu.com
+    initials: A. 1
+    affiliation:
+      - name: University A
+        country: Country A
+        city: City A
+      - name: University B
+        country: Country B
+        city: City B
+    orcid: "0000-0000-XXXX-XXXX"
+    funding: Funded by XXX project using grant YYY.
+  - name: Author 2
+    initials: A. 2
+    email: a.2@edu.org
+    affiliation:
+      name: University A
+      country: Country A
+      city: City A
+    funding: Some new funding
+    orcid: "0000-0000-XXXX-XXXX"
+related-versions:
+  - kind: full
+    url: test.com
+    cite: BIBKEYRelated
+    name: Full version on Arxiv
+  - kind: conference
+    url: doi.org/10.1000/test
+    name: Conference version with DOI
+citing:
+  doi:   10.1000/testciting
+  arxiv: 1234.56789
+classification:
+  acm_12:
+  - id: "10003752.10003809.10010055.10010059"
+    desc: "Random order and robust communication complexity"
+  - id: "10003033.10003058"
+    desc: "Network components"
+  - id: "10002950.10003714.10003715.10003721"
+    desc: "Number-theoretic computations"
+  msc_10:
+  - id: "11Y40"
+    desc: "Algebraic number theory computations"
+  acm_98:
+  - id: "I.7.5"
+    desc: "Document Capture"
+keywords:
+  - first keyword
+  - second keyword
+  - third keyword

@@ -1,0 +1,36 @@
+$schema: paper-meta.0.0.1.schema.json
+title: "Title of the Research Paper"
+short-title: "Optional short title"
+repository: "where to find the source code"
+abstract: |
+  Abstract of the paper, using markdown syntax
+author:
+ - name: Full author name
+   initials: F. A.
+   email: fa@test.com
+   orcid: 0000-0000-XXXX-XXXX
+   website: https://fa-website.com
+   funding: "some funding info here"
+   affiliation:
+     - name: University of Example
+       country: Wonderland
+       city: Example City
+     - name: Another Institution
+       country: Wonderland
+       city: Another City
+ - name: Second Author
+   email: sa@test.com
+classification:
+  acm_12:
+    - desc: " some description "
+      priority: 500
+      id: " acm id "
+  msc_10:
+    - desc: " some description "
+      priority: 500
+      id: " msc id "
+keywords:
+  - kw1
+  - kw2
+  - kw3
+

@@ -1,0 +1,89 @@
+\section{Main}
+
+\subsection{Testing Environments}
+
+The environments allowed should at least contain
+
+\begin{enumerate}
+  \item Theorem
+  \item Definition
+  \item Lemma
+  \item Proposition
+  \item Corollary
+  \item Example
+\end{enumerate}
+
+\foreach \x in {theorem,definition,lemma,proposition,corollary,example} {
+  \begin{\x}[name={Sample \x}]
+    This is a sample \x\ to demonstrate \x\ environments in LaTeX.
+  \end{\x}
+}
+
+\subsection{Testing proofs}
+
+Here is a sample theorem with a proof.
+\begin{theorem}[name={Sample Theorem with Proof}]
+  This is a sample theorem that includes a proof.
+\end{theorem}
+\begin{proof}
+  This is the proof of the sample theorem. It demonstrates how to include a proof environment in LaTeX.
+  \begin{enumerate}
+    \item test
+    \item test
+  \end{enumerate}
+\end{proof}
+
+We can use \texttt{\textbackslash qedhere} to place the QED symbol at a specific location within the proof.
+\begin{theorem}[name={Sample Theorem with QED Here}]
+  This is another sample theorem that includes a proof with QED here.
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item First step of the proof.
+    \item Second step of the proof. \qedhere
+  \end{itemize}
+\end{proof}
+
+
+\subsection{Testing Knowledge Macros}
+
+\AP 
+A \intro{monoid} is a
+set $M$ equipped with a binary operation $\cdot : M \times M \to M$
+and an identity element $e \in M$ such that for all $a, b, c \in M$,
+\begin{itemize}
+  \item (Associativity) $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
+  \item (Identity) $e \cdot a = a \cdot e = a$
+\end{itemize}
+A \intro(monoid){morphism} between two monoids $(M, \cdot_M, e_M)$ and $(N, \cdot_N, e_N)$
+is a function $f : M \to N$ such that for all $a, b \in M$,
+\begin{itemize}
+  \item $f(a \cdot_M b) = f(a) \cdot_N f(b)$
+  \item $f(e_M) = e_N$
+\end{itemize}
+
+\AP
+A \intro{group} is a monoid $(G, \cdot, e)$ such that for every element $a \in G$,
+there exists an inverse element $a^{-1} \in G$ satisfying
+\begin{itemize}
+  \item $a \cdot a^{-1} = a^{-1} \cdot a = e$
+\end{itemize}
+A \intro(group){morphism} between two groups $(G, \cdot_G, e_G)$ and $(H, \cdot_H, e_H)$
+is a function $g : G \to H$ such that for all $a, b \in G$,
+\begin{itemize}
+  \item $g(a \cdot_G b) = g(a) \cdot_H g(b)$
+  \item $g(e_G) = e_H$
+\end{itemize}
+
+
+We can distinguish between a \kl(monoid){morphism} and a \kl(group){morphism}.
+
+\AP We use $\intro*\omegaOrd$ to denote the first infinite ordinal. And can
+refer to it using $\omegaOrd$.
+
+
+\subsection{Testing Cross-References}
+
+As shown in \cref{thm:sample}, this is a sample theorem to demonstrate theorem environments in LaTeX.
+
+We can also cite papers such as \cite{paper1,paper2}.

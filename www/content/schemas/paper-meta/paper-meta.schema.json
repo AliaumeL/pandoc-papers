@@ -1,0 +1,253 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "paper-meta.0.0.1.schema.json",
+  "type": "object",
+  "description": "A JSON schema for metadata of a research paper, including authors, affiliations, and artifacts.",
+  "required": [
+    "title",
+    "author",
+    "abstract"
+  ],
+  "$defs": {
+    "classification": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "An identifier for the classification, e.g., ACM CCS concept ID"
+        },
+        "desc": {
+          "type": "string",
+          "description": "A human-readable description of the classification"
+        }
+      }
+    },
+    "related-version": {
+      "type": "object",
+      "description": "A related version of the same document or paper. Typically a full version on ArXiV, or a published version in some conference",
+      "required": [
+        "kind",
+        "url"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "full",
+            "conference",
+            "journal"
+          ],
+          "description": "The kind of related version"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URL to the related version (DOI, arXiv, etc.)"
+        },
+        "cite": {
+          "type": "string",
+          "description": "A citation key (bibtex) for the related version"
+        },
+        "name": {
+          "type": "string",
+          "description": "A human-readable name for the related version"
+        }
+      }
+    },
+    "acm-artifacts": {
+      "type": "object",
+      "description": "ACM artifacts metadata as described in <https://www.acm.org/publications/policies/artifact-review-and-badging-current>",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "format": "uri"
+        },
+        "reusable": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "functional": {
+          "type": "boolean"
+        }
+      }
+    },
+    "affiliation": {
+      "type": "object",
+      "required": [
+        "name",
+        "country",
+        "city"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "required": [
+        "name",
+        "email"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "initials": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "affiliation": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/affiliation"
+              }
+            },
+            {
+              "$ref": "#/$defs/affiliation"
+            }
+          ]
+        },
+        "orcid": {
+          "type": "string",
+          "pattern": "^[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$"
+        },
+        "funding": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "short-title": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri"
+    },
+    "citing": {
+      "type": "object",
+      "description": "Relevant metadata for citing the paper",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "format": "uri"
+        },
+        "arxiv": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "author": {
+      "oneOf": [
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/author"
+          }
+        },
+        {
+          "$ref": "#/$defs/author"
+        }
+      ]
+    },
+    "abstract": {
+      "type": "string"
+    },
+    "artifacts": {
+      "$ref": "#/$defs/acm-artifacts"
+    },
+    "acknowledgements": {
+      "type": "string"
+    },
+    "related-versions": {
+      "type": "array",
+      "description": "Related versions of the same document or paper. Typically a full version on ArXiV, or a published version in some conference",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/related-version"
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "ccdesc": {
+          "type": "array",
+          "description": "ACM Computing Classification System (CCS) concepts",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "acm_12": {
+          "type": "array",
+          "description": "ACM 2012 Classification concepts",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/classification"
+          }
+        },
+        "msc_10": {
+          "type": "array",
+          "description": "Mathematics Subject Classification (MSC) 2010 concepts",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/classification"
+          }
+        },
+        "acm_98": {
+          "type": "array",
+          "description": "ACM 1998 Classification concepts",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/classification"
+          }
+        }
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Free-form keywords associated with the paper",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

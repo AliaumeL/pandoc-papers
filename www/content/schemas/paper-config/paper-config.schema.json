@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for configuring a research paper.",
+  "type": "object",
+  "properties": {
+    "draft": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enables todos, draft pictures, etc."
+    },
+    "anonymous": {
+      "type": "boolean",
+      "default": false,
+      "description": "Removes author names and affiliations for anonymous submissions."
+    },
+    "camera-ready": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disables line numbers, sets pdf-a mode, etc."
+    },
+    "libraries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of libraries used in the paper, these are files that will be included in the preamble of the document."
+    },
+    "knowledges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of knowledge files to use in the paper."
+    },
+    "appendix": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of appendices included in the paper."
+    },
+    "bibliography": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Path to the bibliography file in bibtex/biblatex format."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of bibliography files in bibtex/biblatex format."
+        }
+      ]
+    }
+  }
+}

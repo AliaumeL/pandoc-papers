@@ -1,0 +1,14 @@
+
+\NewDocumentCommand{\superMacro}{ o m }{%
+  \ifthenelse{\isempty{#1}}{%
+    \textbf{#2}%
+  }{%
+    \textit{#2} (#1)%
+  }%
+}
+
+\NewDocumentCommand{\omegaOrd}{}{
+  \kl[\omegaOrd]{\omega}
+}
+\knowledge{\omegaOrd}{notion}
+
