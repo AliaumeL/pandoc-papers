@@ -13,12 +13,12 @@
 This is the official webpage corresponding to the [pandoc
 papers][pandoc-papers] repository on GitHub. It aims to provide two things:
 
-1. A centralised location for various academic [paper templates](templates/) that can be used
+1. A centralised location for various academic [paper templates](/templates/) that can be used
    using [pandoc].
-2. A formalised metadata file, called [paper-meta](schemas/paper-meta/) that
+2. A formalised metadata file, called [paper-meta](/schemas/paper-meta/) that
    serves as a machine readable specification of the various metadata applying
    to an academic paper.
-3. A formalised [paper-config](schemas/paper-config/) metadata format, that
+3. A formalised [paper-config](/schemas/paper-config/) metadata format, that
    serves as a specification of the various configuration options that can be
    used when producing a paper.
 
@@ -60,9 +60,9 @@ pandoc --defaults=<template-name> -o output-name.tex input.md
 
 Available outputs include
 
-- [x] [article](https://www.latex-project.org/help/documentation/article/)
+- [x] *plain*
   using the `article` class with sane defaults.
-- [x] [lipics](https://lipics-conference.github.io/lipics-v2024/)
+- [x] [lipics](https://github.com/dagstuhl-publishing/styles)
   using the LIPIcs 2024 template.
 - [x] [lncs](https://www.springer.com/gp/computer-science/lncs)
   using the Springer LNCS template.

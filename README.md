@@ -1,3 +1,7 @@
+[![CI](https://github.com/AliaumeL/pandoc-papers/actions/workflows/ci.yaml/badge.svg)](https://github.com/AliaumeL/pandoc-papers/actions/workflows/ci.yaml)
+
+[![Deploy static content to Pages](https://github.com/AliaumeL/pandoc-papers/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/AliaumeL/pandoc-papers/actions/workflows/github-pages.yaml)
+
 # pandoc-papers
 
 A collection of [pandoc] templates for various conferences and journals, with

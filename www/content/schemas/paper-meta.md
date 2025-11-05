@@ -60,7 +60,7 @@ These are the most commonly used classification systems in computer science and
 mathematics. Other classifications may be added in future versions of the
 specification.
 
-[ACM 1998]: https://www.acm.org/publications/class-1998
+[ACM 1998]: https://cran.r-project.org/web/classifications/ACM.html
 [MSC 2010]: https://www.ams.org/msc
 [ACM 2012]: https://www.acm.org/publications/class-2012
 
