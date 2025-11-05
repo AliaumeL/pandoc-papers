@@ -11,14 +11,14 @@
 </div>
 
 This is the official webpage corresponding to the [pandoc
-papers][pandoc-papers] repository on GitHub. It aims to provide two things:
+papers][pandoc-papers] repository on GitHub. It aims to provide three things:
 
-1. A centralised location for various academic [paper templates](/templates/) that can be used
+1. A centralised location for various academic [paper templates](@/templates/) that can be used
    using [pandoc].
-2. A formalised metadata file, called [paper-meta](/schemas/paper-meta/) that
+2. A formalised metadata file, called [paper-meta](@/schemas/paper-meta/) that
    serves as a machine readable specification of the various metadata applying
    to an academic paper.
-3. A formalised [paper-config](/schemas/paper-config/) metadata format, that
+3. A formalised [paper-config](@/schemas/paper-config/) metadata format, that
    serves as a specification of the various configuration options that can be
    used when producing a paper.
 
@@ -41,7 +41,7 @@ minimising friction when switching between templates. For a full list of
 included packages and options, please refer to the documentation of each
 template.
 
-### Getting started
+### Cheat sheet
 
 Using `pandoc-papers` requires the following files in your paper's project folder:
 
@@ -55,7 +55,7 @@ From these files, you can produce your paper in the desired format by running
 the following command:
 
 ```bash
-pandoc --defaults=<template-name> -o output-name.tex input.md
+pandoc --defaults=<template-name> -o output-name.tex
 ```
 
 Available outputs include
@@ -113,6 +113,25 @@ make paper.<template>.tex
 By default, the `Makefile` can also produce `paper.<template>.pdf` files,
 provided you have a working LaTeX installation on your computer. The
 compilation to PDF is done by calling [latexmk] on the generated `.tex` file.
+
+
+## (Not so) Frequently Asked Questions
+
+### How do I build the PDF version of my paper?
+
+The recommended way to use the templates is that the `paper.md` file contains
+only include directives to actual content. In this situation, once you have
+produced the `.tex` file of your paper using `pandoc`, you can use any tool you
+prefer to compile the PDF, without ever interacting with `pandoc` again (until
+your paper is rejected and you resubmit it to another venue, of course).
+
+Since templates of conferences require specific styles (`.cls` and `.sty`
+files) and images (such as logos), you need to ensure that these files are
+available to the LaTeX compiler. The easiest way is to copy these files to your
+paper's project folder (this will likely be done only once), they are located
+in `pandoc-papers/defaults/<template-name>/`. Another option is to add the
+folder containing these files to the `TEXINPUTS` environment variable.
+
 
 
 [pandoc-papers]: https://github.com/AliaumeL/pandoc-papers

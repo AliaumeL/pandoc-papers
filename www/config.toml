@@ -17,10 +17,10 @@ highlight_code = true
 
 [extra]
 header_nav = [
-  { url = "/", name_en = "/home/" },
-  { url = "/schemas", name_en = "/schemas/" },
-  { url = "/templates", name_en = "/templates/" },
-  { url = "/about", name_en = "/about/" },
+  { url = "/pandoc-papers", name_en = "/home/" },
+  { url = "/pandoc-papers/schemas", name_en = "/schemas/" },
+  { url = "/pandoc-papers/templates", name_en = "/templates/" },
+  { url = "/pandoc-papers/about", name_en = "/about/" },
 ]
 
 twitter_card = true
