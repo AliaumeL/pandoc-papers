@@ -20,7 +20,7 @@ jobs:
         with:
           submodules: 'recursive'
       - name: "Install Zola"
-        run: sudo apt install zola
+        run: sudo snap install --edge zola
       - name: "Build site"
         run: cd www && zola build
       - name: Deploy to GitHub Pages
