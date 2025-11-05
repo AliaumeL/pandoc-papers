@@ -11,6 +11,10 @@
   "$defs": {
     "classification": {
       "type": "object",
+      "required": [
+        "id",
+        "desc"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -19,6 +23,10 @@
         "desc": {
           "type": "string",
           "description": "A human-readable description of the classification"
+        },
+        "priority": {
+          "type": "integer",
+          "description": "The priority of the classification (lower numbers indicate higher priority)"
         }
       }
     },
@@ -207,14 +215,6 @@
     "classification": {
       "type": "object",
       "properties": {
-        "ccdesc": {
-          "type": "array",
-          "description": "ACM Computing Classification System (CCS) concepts",
-          "minItems": 1,
-          "items": {
-            "type": "string"
-          }
-        },
         "acm_12": {
           "type": "array",
           "description": "ACM 2012 Classification concepts",

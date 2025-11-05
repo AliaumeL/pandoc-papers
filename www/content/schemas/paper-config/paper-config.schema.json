@@ -1,5 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "paper-config.0.0.1.schema.json",
   "description": "Schema for configuring a research paper.",
   "type": "object",
   "properties": {
@@ -17,6 +18,11 @@
       "type": "boolean",
       "default": false,
       "description": "Disables line numbers, sets pdf-a mode, etc."
+    },
+    "personal": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disables custom conference outputs, producing pdfs suitable for personal use."
     },
     "libraries": {
       "type": "array",

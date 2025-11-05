@@ -39,6 +39,9 @@ $endif$
 \usepackage{amssymb,amsmath,stmaryrd,thmtools,upgreek}
 
 
+% define a qedhere to do nothing (as LNCS does not show the qed symbol at all)
+\newcommand{\qedhere}{}
+
 % graphics packages
 \usepackage{graphicx}
 \usepackage[obeyclassoptions,mode=tex]{standalone}
@@ -83,7 +86,10 @@ $endif$
 \Crefname{algocf}{Algorithm}{Algorithms}
 
 % Colors 
-\usepackage{ensps-colorscheme}
+\definecolor{KLA4}{RGB}{0,78,125}
+\definecolor{KLB1}{RGB}{49,62,72}
+\knowledgestyle{intro notion}{color={KLA4}, emphasize}
+\knowledgestyle{notion}{color={KLB1}}
 
 % we include whatever the user wants to include in the header
 $for(header-includes)$

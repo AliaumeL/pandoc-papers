@@ -1,5 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "paper-config.0.0.1.schema.json",
   "description": "Schema for configuring a research paper.",
   "type": "object",
   "properties": {
@@ -18,13 +19,18 @@
       "default": false,
       "description": "Disables line numbers, sets pdf-a mode, etc."
     },
+    "personal": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disables custom conference outputs, producing pdfs suitable for personal use."
+    },
     "libraries": {
       "type": "array",
       "items": {
         "type": "string"
       },
       "default": [],
-      "description": "List of libraries used in the paper."
+      "description": "List of libraries used in the paper, these are files that will be included in the preamble of the document."
     },
     "knowledges": {
       "type": "array",
@@ -46,14 +52,14 @@
       "oneOf": [
         {
           "type": "string",
-          "description": "Path to the bibliography file."
+          "description": "Path to the bibliography file in bibtex/biblatex format."
         },
         {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "description": "List of bibliography entries."
+          "description": "List of bibliography files in bibtex/biblatex format."
         }
       ]
     }

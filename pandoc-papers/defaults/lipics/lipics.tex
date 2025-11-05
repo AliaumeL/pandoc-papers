@@ -7,25 +7,25 @@
 % - If you want to update the content of the paper, please edit the latex files
 %   in the `src` directory.
 % - If you want to update the template itself (e.g., change the layout), please
-%   edit the `templates/lipics/lipics.tex` file instead.
+%   edit the `defaults/lipics/lipics.tex` file instead.
 \documentclass[
     a4paper,
     UKenglish,
     cleveref,
-    autoref,$if(review)$anonymous,$endif$$if(arxiv)$pdfa,$endif$
+    autoref,$if(anonymous)$anonymous,$endif$$if(camera-ready)$pdfa,$endif$
     thm-restate]{lipics-v2021}
 
-$if(arxiv)$
+$if(personal)$
 \hideLIPIcs
 \pdfoutput=1
 \nolinenumbers
 $endif$
 
-$if(review)$
+$if(anonymous)$
 \hideLIPIcs
 $endif$
 
-$if(final)$
+$if(camera-ready)$
 \nolinenumbers
 $endif$
 
@@ -62,7 +62,10 @@ $endif$
 \usepackage{bussproofs}
 
 % Colors 
-\usepackage{ensps-colorscheme}
+\definecolor{KLA4}{RGB}{0,78,125}
+\definecolor{KLB1}{RGB}{49,62,72}
+\knowledgestyle{intro notion}{color={KLA4}, emphasize}
+\knowledgestyle{notion}{color={KLB1}}
 
 
 % we include whatever the user wants to include in the header
@@ -74,6 +77,42 @@ $endfor$
 $for(libraries)$
 \input{$libraries$}
 $endfor$
+
+% sample knowledge
+\knowledge{notion}
+ | kl-usage
+
+% Knowledge logo
+\newcommand{\klogo}{%
+\begin{tikzpicture}[scale=0.2,line/.style={draw, line width=0.2pt, line cap=round, line join=round}]
+\coordinate (A00) at (0,0);
+\coordinate (A01) at (0,1);
+\coordinate (A10) at (1,0);
+\coordinate (B10) at (1,0.2);
+\coordinate (B01) at (0.2,1);
+
+\coordinate (C01) at (0.4,0.7);
+\coordinate (C10) at (0.7,0.4);
+\coordinate (C12) at (0.4,1.2);
+\coordinate (C21) at (1.2, 0.4);
+\coordinate (C22) at (1.2, 1.2);
+
+\coordinate (D00) at (C10);
+\coordinate (D01) at (0.8,0.5);
+\coordinate (D10) at (0.8,0.3);
+
+\coordinate (E01) at (0.3,0.7);
+\coordinate (E10) at (0.5,0.7);
+
+\draw[line] (B01) -- (A01) -- (A00) -- (A10) -- (B10);
+\draw[line] (C01) -- (C12) -- (C22) -- (C21) -- (C10);
+
+\draw[line] (D01) -- (D00) -- (D10);
+\draw[line] (E01) -- (E10);
+
+\end{tikzpicture}%
+}
+
 
 % We include the title and author information based on the 
 % `paper-meta.yaml` file.
@@ -95,19 +134,19 @@ $endfor$
 
 \Copyright{$for(author)$$author.name$$sep$ and $endfor$} 
 
-$for(classification.ccdesc)$
-\ccsdesc[100]{$it$}
+$for(classification.acm_12)$
+\ccsdesc[100]{$it.desc$}
 $endfor$
 
 \keywords{$for(keywords)$$it$$sep$, $endfor$} %TODO mandatory; please add comma-separated list of keywords
 
 \category{} %optional, e.g. invited paper
 
-$for(related-version)$
+$for(related-versions)$
 $if(it.cite)$
 \relatedversiondetails[cite={$it.cite$}]{$it.name$}{$it.url$}
 $else$
-\relatedversion{$it$}
+\relatedversiondetails{$it.name$}{$it.url$}
 $endif$
 $endfor$
 
@@ -116,7 +155,13 @@ $for(supplement)$
 $endfor$
 
 $if(acknowledgements)$
+\acknowledgements{%
+$if(anonymous)$
+Anonymized for review.
+$else$
 \acknowledgements{$acknowledgements$}
+$endif$
+}
 $endif$
 
 $if(anonymous)$
@@ -139,6 +184,8 @@ $endif$
 \ArticleNo{23}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 % Now, we create the document itself.
 \begin{document}
 % Generate the title page
@@ -151,6 +198,11 @@ $else$
     Please write an abstract in the \texttt{paper-meta.yaml} file.
 $endif$
 \end{abstract}
+
+\noindent
+\klogo\ This document uses \href{https://ctan.org/pkg/knowledge}{knowledge}:
+a \kl[kl-usage]{notion} points to its \intro[kl-usage]{definition}. 
+
 
 % Include the content of the paper
 $body$
