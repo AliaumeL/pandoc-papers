@@ -9,6 +9,8 @@ paper.%.pdf: paper.%.tex
 	cp build/$(notdir $@) $@
 
 
+templates: paper.ieee.tex paper.lncs.tex paper.lipics.tex paper.plain.tex paper.acmart.tex
+
 all: paper.ieee.pdf paper.lncs.pdf paper.lipics.pdf paper.plain.pdf paper.acmart.pdf
 
 clean:
