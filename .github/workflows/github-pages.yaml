@@ -12,14 +12,39 @@ on:
 
 jobs:
   # Single deploy job since we're just deploying
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: build_and_deploy
-        uses: shalzz/zola-deploy-action@master
-        env:
-          BUILD_DIR: www
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          submodules: 'recursive'
+      - name: "Install Zola"
+        run: sudo apt install zola
+      - name: "Build site"
+        run: cd www && zola build
+      - name: Deploy to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: www/public/
+  # Deploy to GitHub Pages
+  deploy:
+    # Add a dependency to the build job
+    needs: build
 
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
