@@ -15,10 +15,10 @@ papers][pandoc-papers] repository on GitHub. It aims to provide three things:
 
 1. A centralised location for various academic [paper templates](@/templates/_index.md) that can be used
    using [pandoc].
-2. A formalised metadata file, called [paper-meta](@/schemas/paper-meta.md) that
+2. A formalised metadata file, called [paper-meta](@/schemas/paper-meta/index.md) that
    serves as a machine readable specification of the various metadata applying
    to an academic paper.
-3. A formalised [paper-config](@/schemas/paper-config.md) metadata format, that
+3. A formalised [paper-config](@/schemas/paper-config/index.md) metadata format, that
    serves as a specification of the various configuration options that can be
    used when producing a paper.
 
