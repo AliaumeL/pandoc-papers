@@ -21,7 +21,7 @@ You can put the content of the `pandoc-paper` subfolder in the
 - [x] [lipics](https://lipics-conference.github.io/lipics-v2024/)
 - [x] [lncs](https://www.springer.com/gp/computer-science/lncs)
 - [x] [acmart](https://www.acm.org/publications/proceedings-template)
-- [x] [ieeetran](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-article/use-authoring-tools-and-templates/ieee-article-templates/ieee-latex-template/)
+- [x] [ieeetran](https://www.ieee.org/conferences/publishing/templates)
 
 Note that in the templates, classical packages are included and configured in
 an opinionated way. In particular, I use the `knowledge` package to manage
