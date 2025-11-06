@@ -139,3 +139,4 @@ folder containing these files to the `TEXINPUTS` environment variable.
 [ArXiv]: https://arxiv.org/
 [pandoc-defaults-folder]: https://pandoc.org/MANUAL.html#defaults-files
 [latexmk]: https://ctan.org/pkg/latexmk
+[pandoc-papers-releases]: https://github.com/AliaumeL/pandoc-papers/releases
