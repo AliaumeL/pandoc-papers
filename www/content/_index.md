@@ -68,6 +68,7 @@ Available outputs include
   using the Springer LNCS template.
 - [x] [acmart](https://www.acm.org/publications/proceedings-template)
   using the ACM proceedings template.
+- [x] [ieeetran](https://www.ieee.org/conferences/publishing/templates)
 - [ ] Plain metadata, to export the paper's metadata to an easily copy-pastable
   plain text file
 - [ ] Bibtex, to export the paper's metadata into a ready to use Bibtex entry.
