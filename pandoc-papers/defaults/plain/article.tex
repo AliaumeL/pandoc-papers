@@ -176,19 +176,19 @@ $endfor$
 % For the date, we first check if the user has provided a date,
 % and otherwise use the git meta inforamtion (if available).
 $if(draft)$
-$if(date)$
-\date{$date$$if(git-meta)$ --- $git-meta.commit$$endif$}
+  $if(date)$
+    \date{$date$$if(git-meta)$ --- $git-meta.commit$$endif$}
+  $else$
+    $if(git-meta)$
+      \date{$git-meta.date$\footnote{$git-meta.commit$ -- branch $git-meta.branch$ at $git-meta.origin$}}
+    $endif$
+  $endif$
 $else$
-$if(git-meta)$
-\date{$git-meta.date$\footnote{$git-meta.commit$ -- branch $git-meta.branch$ at $git-meta.origin$}}
-$endif$
-$endif$
-$else$
-$if(date)$
-\date{$date$}
-$else$
-\date{\today}
-$endif$
+  $if(date)$
+    \date{$date$}
+  $else$
+    \date{\today}
+  $endif$
 $endif$
 
 $if(anonymous)$
@@ -211,15 +211,35 @@ $if(abstract)$
 $else$
     Please write an abstract in the \texttt{paper-meta.yaml} file.
 $endif$
+\end{abstract}
+
 $if(keywords)$
-    \paragraph{Keywords:}
-    $for(keywords)$$it$$sep$, $endfor$
+\paragraph{Keywords:}
+    $for(keywords)$$it$$sep$, $endfor$.
+$endif$
+$if(classification.acm_12)$
+\paragraph{ACM CSS 2012:}
+$for(classification.acm_12)$
+$it.desc$$sep$;
+$endfor$.
 $endif$
 \paragraph{Repository:} \repositoryUrl
+$if(relatedversion)$
+\paragraph{Related versions:}
 $for(relatedversion)$
-\paragraph{$it.kind$} \href{$it.url$}{$it.name$} $if(it.cite)$\cite{$it.cite$}$endif$
+\href{$it.url$}{$it.name$ ($it.kind$)} $if(it.cite)$\cite{$it.cite$}$endif$
 $endfor$
-\end{abstract}
+$endif$
+
+\paragraph{Acknowledgments.}
+$if(acknowledgments)$
+$acknowledgments$
+$endif$
+$for(author)$
+$for(author.funding)$$it$ $endfor$
+$endfor$
+
+\bigskip
 
 \klogo\ This document uses \href{https://ctan.org/pkg/knowledge}{knowledge}:
 \kl[kl-usage]{notion} points to its \intro[kl-usage]{definition}. 
