@@ -39,8 +39,14 @@ $endif$
 
 % math packages
 \usepackage{stmaryrd,thmtools,upgreek}
-\newtheorem{assumption}{Assumption}
-\newtheorem{fact}{Fact}
+
+% adding new theorems, taken from  
+% https://github.com/borisveytsman/acmart/issues/399
+\AtEndPreamble{%
+\theoremstyle{acmdefinition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{fact}[theorem}{Fact}
+}
 
 
 % graphics packages
