@@ -10,9 +10,6 @@ resource-path:
   - .             # the working directory from which pandoc is run
   - ${.}/plain    # class and images for acmart
 
-# By default, process paper.md with paper-meta.yaml
-input-file: paper.md
-metadata-file: paper-meta.yaml
 
 # Writer settings
 to: latex

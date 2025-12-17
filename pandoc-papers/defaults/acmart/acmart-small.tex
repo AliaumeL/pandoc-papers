@@ -8,12 +8,11 @@
 %   in the `src` directory.
 % - If you want to update the template itself (e.g., change the layout), please
 %   edit the `defaults/asmart/asmart-small.tex` file instead.
-\documentclass[acmsmall,$if(anonymous)$anonymous,$endif$$if(camera-ready)$$else$review,$endif$]{acmart}
+\documentclass[$if(acmart.format)$$acmart.format$$else$acmsmall$endif$,$if(anonymous)$anonymous,$endif$$if(camera-ready)$$else$review,$endif$,screen]{acmart}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\newtheorem{assumption}{Assumption}
 
 \setcopyright{acmlicensed}
 \copyrightyear{2018}
@@ -40,6 +39,8 @@ $endif$
 
 % math packages
 \usepackage{stmaryrd,thmtools,upgreek}
+\newtheorem{assumption}{Assumption}
+\newtheorem{fact}{Fact}
 
 
 % graphics packages
@@ -53,6 +54,7 @@ $endif$
 \usetikzlibrary{tikzmark}
 \usetikzlibrary{patterns}
 \usetikzlibrary{arrows}
+\usetikzlibrary{calc}
 \tikzset{every state/.style={minimum size=1pt}}
 \usepackage{tikz-cd}
 
