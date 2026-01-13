@@ -47,6 +47,7 @@ $endif$
 \AtEndPreamble{%
 \theoremstyle{acmdefinition}
 \newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
 \newtheorem{fact}[theorem]{Fact}
 \newtheorem{claim}[theorem]{Claim}
 \Crefname{assumption}{Assumption}{Assumptions}
@@ -87,7 +88,6 @@ $endif$
 % links inside the document
 \usepackage{hyperref}
 \usepackage[capitalise,noabbrev,nameinlink]{cleveref}
-\Crefname{assumption}{Assumption}{Assumptions}
 \usepackage[$if(draft)$composition$else$electronic$endif$,hyperref,xcolor,cleveref]{knowledge}
 \knowledgeconfigure{notion}
 
