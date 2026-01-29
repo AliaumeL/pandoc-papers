@@ -30,13 +30,7 @@ FILTERS = $(find filters -type f -name '*.lua')
 DEFAULTS = $(find defaults -type f -name '*.yaml')
 TEMPLATES = $(find templates -type d)
 
-update: 
-	git pull origin main
 
-create-dirs:
-	mkdir -p $(PANDOC_INSTALL_DIR)/defaults
-	mkdir -p $(PANDOC_INSTALL_DIR)/filters
-	mkdir -p $(PANDOC_INSTALL_DIR)/templates
 
 install: create-dirs
 	@echo "Installing pandoc-papers to $(PANDOC_INSTALL_DIR)"
@@ -50,6 +44,15 @@ install: create-dirs
 	@echo "Copying default YAML files to $(PANDOC_INSTALL_DIR)/defaults"
 	cp -r defaults/* $(PANDOC_INSTALL_DIR)/defaults/
 	@echo "Installation complete."
+
+create-dirs:
+	mkdir -p $(PANDOC_INSTALL_DIR)/defaults
+	mkdir -p $(PANDOC_INSTALL_DIR)/filters
+	mkdir -p $(PANDOC_INSTALL_DIR)/templates
+
+update: 
+	git pull origin main
+
 
 stow: create-dirs
 	@echo "Stowing pandoc-papers to $(PANDOC_INSTALL_DIR)"

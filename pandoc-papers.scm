@@ -14,9 +14,9 @@
         (method git-fetch)
         (uri (git-reference
               (url "https://github.com/AliaumeL/pandoc-papers.git")
-              (commit "782722b")))
+              (commit "8af694dd7b5b9217cef1baa22717120c4c0feca9")))
         (file-name (git-file-name name version))
-        (sha256 (base32 "16l06bsxqsc7qg25x9qwrz1sscnkv2z10pj1ja8qrq9mvsdb3g1k"))))
+        (sha256 (base32 "1f5iphhpimifcri84ccj8735r6k0srshj89201wf82v7yxp0b16v"))))
     (build-system gnu-build-system)
     ; remove the configure phase since there is no configure script
     (arguments (list 
