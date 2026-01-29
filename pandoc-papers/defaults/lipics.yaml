@@ -1,13 +1,13 @@
 # This is a defaults file for Pandoc, 
 # that configures Pandoc to use the lipics LaTeX template for Dagstuhl Proceedings articles.
-template: ${.}/lipics/lipics.tex
+template: ${.}/../templates/lipics/lipics.tex
 
 filters:
   - ${.}/../filters/git-meta.lua
 
 resource-path:
   - .             # the working directory from which pandoc is run
-  - ${.}/lipics   # class and images for lipics
+  - ${.}/../templates/lipics   # class and images for lipics
   
 # Writer settings
 to: latex

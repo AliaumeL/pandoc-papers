@@ -1,19 +1,24 @@
+.PHONY: all templates clean
+
+PANDOC=pandoc --data-dir=$(shell pwd)/../pandoc-papers
+
+TEMPLATES=ieee lncs lipics plain acmart
+
+TEXFILES = $(patsubst %,paper.%.tex,$(TEMPLATES))
+PDFFILES = $(patsubst %,paper.%.pdf,$(TEMPLATES))
+
+all: $(PDFFILES)
+
+templates: $(TEXFILES)
 
 paper.%.tex: paper.md
-	pandoc --defaults=../pandoc-papers/defaults/$*.yaml -o $@ 
+	$(PANDOC) --defaults=$* -o $@ --metadata-file=paper-meta.yaml paper.md
 
 paper.%.pdf: paper.%.tex
 	# latexmk 
 	# TEXINPUTS append ../pandoc-papers/defaults/%/ 
-	TEXINPUTS=.:../pandoc-papers/defaults/$*/: latexmk -pdf -halt-on-error -outdir=build $<
+	TEXINPUTS=.:../pandoc-papers/templates/$*/: latexmk -f -pdf -halt-on-error -outdir=build $<
 	cp build/$(notdir $@) $@
-
-
-templates: paper.ieee.tex paper.lncs.tex paper.lipics.tex paper.plain.tex paper.acmart.tex
-
-all: paper.ieee.pdf paper.lncs.pdf paper.lipics.pdf paper.plain.pdf paper.acmart.pdf
 
 clean:
 	rm -rf build paper.*.tex paper.*.pdf
-
-.PHONY: clean all

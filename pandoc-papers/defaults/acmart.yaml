@@ -1,13 +1,13 @@
 # This is a defaults file for Pandoc, 
 # that configures Pandoc to use the acmart LaTeX template for ACM articles.
-template: ${.}/acmart/acmart-small.tex
+template: ${.}/../templates/acmart/acmart-small.tex
 
 filters:
   - ${.}/../filters/git-meta.lua
 
 resource-path:
   - .             # the working directory from which pandoc is run
-  - ${.}/acmart   # class and images for acmart
+  - ${.}/../acmart   # class and images for acmart
 
 # Writer settings
 to: latex

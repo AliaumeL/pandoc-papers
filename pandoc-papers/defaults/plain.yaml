@@ -1,6 +1,6 @@
 # This is a defaults file for Pandoc, 
 # that configures Pandoc to use the acmart LaTeX template for ACM articles.
-template: ${.}/plain/article.tex
+template: ${.}/../templates/plain/article.tex
 
 filters:
   - ${.}/../filters/git-meta.lua
@@ -8,7 +8,7 @@ filters:
 
 resource-path:
   - .             # the working directory from which pandoc is run
-  - ${.}/plain    # class and images for acmart
+  - ${.}/../templates/plain    # class and images for acmart
 
 
 # Writer settings
