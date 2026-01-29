@@ -49,6 +49,18 @@ $endif$
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{claim}[theorem]{Claim}
+
+
+% claim and claim proof environment
+\def\cqedsymbol{\ifmmode$$\lrcorner$$\else{\unskip\nobreak\hfil
+		\penalty50\hskip1em\null\nobreak\hfil$$\lrcorner$$
+		\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi} 
+\newcommand{\cqed}{\renewcommand{\qed}{\cqedsymbol}}
+
+\newenvironment{claimproof}[1][Proof.]{\begin{proof}[#1]}{\renewcommand{\qed}{\hfill$$\blacksquare$$}\end{proof}}
+\newcommand{\claimqedhere}{\renewcommand{\qedsymbol}{\hfill$$\blacksquare$$}\qedhere}
 
 
 
@@ -64,6 +76,7 @@ $endif$
 \usetikzlibrary{tikzmark}
 \usetikzlibrary{patterns}
 \usetikzlibrary{arrows}
+\usetikzlibrary{calc}
 
 \tikzset{every state/.style={minimum size=1pt}}
 \usepackage{tikz-cd}
@@ -76,7 +89,18 @@ $endif$
 \usepackage{hyperref}
 \usepackage[capitalise,noabbrev,nameinlink]{cleveref}
 \Crefname{assumption}{Assumption}{Assumptions}
+\crefname{assumption}{Assumption}{Assumptions}
 \Crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\Crefname{fact}{Fact}{Facts}
+\crefname{fact}{Fact}{Facts}
+\Crefname{remark}{Remark}{Remarks}
+\crefname{remark}{Remark}{Remarks}
+\Crefname{example}{Example}{Examples}
+\crefname{example}{Example}{Examples}
+\Crefname{claim}{Claim}{Claims}
+\crefname{claim}{Claim}{Claims}
+
 \usepackage[$if(draft)$composition$else$electronic$endif$,hyperref,xcolor,cleveref]{knowledge}
 \knowledgeconfigure{notion}
 
