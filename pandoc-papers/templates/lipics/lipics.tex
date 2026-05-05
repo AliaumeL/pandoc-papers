@@ -34,6 +34,7 @@ $endif$
 \usepackage[obeyclassoptions,mode=tex]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{positioning}
 \usetikzlibrary{automata}
@@ -60,6 +61,10 @@ $endif$
 
 % Maths
 \usepackage{amssymb,stmaryrd}
+% create a fact environment
+\theoremstyle{theorem}
+\newtheorem{fact}[theorem]{Fact}
+
 
 
 % Proofs
@@ -181,6 +186,9 @@ $else$
 \newcommand{\repositoryUrl}{\url{$if(repository.url)$$repository.url$$else$$repository$$endif$}}
 $endif$
 
+$if(lipics.editor-macros)$
+$lipics.editor-macros$
+$else$
 %Editor-only macros:: begin (do not touch as author)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \EventEditors{John Q. Open and Joan R. Access}
 \EventNoEds{2}
@@ -194,6 +202,7 @@ $endif$
 \SeriesVolume{42}
 \ArticleNo{23}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$endif$
 
 
 
