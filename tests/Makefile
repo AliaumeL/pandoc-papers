@@ -2,7 +2,7 @@
 
 PANDOC=pandoc --data-dir=$(shell pwd)/../pandoc-papers
 
-TEMPLATES=ieee lncs lipics plain acmart
+TEMPLATES=ieee lncs lipics plain acmart 
 
 TEXFILES = $(patsubst %,paper.%.tex,$(TEMPLATES))
 PDFFILES = $(patsubst %,paper.%.pdf,$(TEMPLATES))
@@ -10,6 +10,11 @@ PDFFILES = $(patsubst %,paper.%.pdf,$(TEMPLATES))
 all: $(PDFFILES)
 
 templates: $(TEXFILES)
+
+paper.sigconf.tex: paper.md
+	$(PANDOC) --defaults=acmart -o $@ --metadata-file=paper-meta.yaml \
+		--metadata "acmart.format: sigconf" \
+		paper.md
 
 paper.%.tex: paper.md
 	$(PANDOC) --defaults=$* -o $@ --metadata-file=paper-meta.yaml paper.md

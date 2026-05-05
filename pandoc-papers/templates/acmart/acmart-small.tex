@@ -7,7 +7,12 @@
 % - If you want to update the content of the paper, please edit the latex files
 %   in the `src` directory.
 % - If you want to update the template itself (e.g., change the layout), please
-%   edit the `defaults/asmart/asmart-small.tex` file instead.
+%   edit the `templates/acmart/acmart-small.tex` file instead.
+%
+% Possible values for `acmart.format`:
+% - acmsmall
+% - sigconf
+% - sigplan
 \documentclass[$if(acmart.format)$$acmart.format$$else$acmsmall$endif$,$if(anonymous)$anonymous,$endif$$if(camera-ready)$$else$review,$endif$,screen]{acmart}
 
 \usepackage[utf8]{inputenc}
