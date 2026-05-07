@@ -64,7 +64,6 @@ $endif$
 % create a fact environment
 \usepackage{cancel}
 \theoremstyle{theorem}
-\newtheorem{fact}[theorem]{Fact}
 \newtheorem{assumption}[theorem]{Assumption}
 \theoremstyle{plain}
 \newtheorem{fact}[theorem]{Fact}
@@ -145,7 +144,7 @@ $for(author)$
        {$for(author.affiliation)$$it.name$$sep$\and $endfor$}
        {$author.email$}
        {$if(author.orcid)$https://orcid.org/$author.orcid$$endif$}
-       {$author.acknowledgements$}
+       {$author.funding$}
 $endfor$
 
 \authorrunning{$for(author)$$author.initials$$sep$ and $endfor$}
@@ -177,11 +176,21 @@ $if(acknowledgements)$
 $if(anonymous)$
 Anonymized for review.
 $else$
-\acknowledgements{$acknowledgements$}
+$acknowledgements$%
 $endif$
 }
 $endif$
 
+$if(funding)$
+\funding{%
+  $if(anonymous)$
+  Anonymized for review.
+  $else$
+  $funding$%
+  $endif$
+}
+$endif$
+ 
 $if(anonymous)$
 \newcommand{\repositoryUrl}{$if(repository.anonymous)$$repository.anonymous$$else$Undefined Anonymous Repository$endif$}
 $else$
